@@ -1,0 +1,29 @@
+pi@raspberrypi:~ $ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/pi/.ssh/id_rsa): 
+Created directory '/home/pi/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/pi/.ssh/id_rsa.
+Your public key has been saved in /home/pi/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:xkAeiWkywd0bSXWkgsj/SHsfbEVYIRO+oE3xum2FAxE pi@raspberrypi
+
+Do next command and copy public key
+pi@raspberrypi:~/.ssh $ more id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdwbpJRxIvBDthqrXHQM0xMGgU9BlPsEUS6U9man3bRT0iXwVxkrlLG2m3nkQ2IaJjY/XCuo37LF6U7XsRXJZC6zF6fHcGVWnZxt7rRydwgRHkdErawk27on+BGv5wJi40YRpBayHGmMoQClOIUEmVA9U4VEZ9GR+IBhDmktcd3iMzZ2+xW2WtHlAFCWI1/cgp9eQxn+
+/zXOvvPGzxzF6ehm1jGc2qi02W8X935fSK8HGNo1JBucMIHJwqLNAmr4kMPwjicsCSb5Ys7ZdPdmKbxBuiSNRZSDJLeKaO1jsbkJzZ50+lbXB9fUCH2r+czccvhRIYvGR+dGXKkDgh4FhD pi@raspberrypi
+
+Go to Github and add public key to deploy keys
+
+Configure remote communication with Github server with the private and public key created- public key set in Github
+
+pi@raspberrypi:~/Documents/repos/raspberry_pi_code $ ssh -T git@github.com
+The authenticity of host 'github.com (140.82.114.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.114.3' (RSA) to the list of known hosts.
+Enter passphrase for key '/home/pi/.ssh/id_rsa': 
+Hi damondan/raspberry_pi_code! You've successfully authenticated, but GitHub does not provide shell access.
+
+pi@raspberrypi:~/Documents/repos/raspberry_pi_code $ git remote set-url origin git@github.com:damondan/raspberry_pi_code.git
