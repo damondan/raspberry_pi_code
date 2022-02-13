@@ -19,14 +19,12 @@ while (True):
         strip = Adafruit_NeoPixel(
             LED_COUNT, LED_PIN, LED_FREQU_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
         strip.begin()
-
+strip.setPixelColor(x, Color(int(red), int(blue), int(green)))
         for x in range(0, LED_COUNT):
-            strip.setPixelColor(x, Color(int(255), int(0), int(0)))
-            strip.show()
-            time.sleep(.07)
             strip.setPixelColor(x, Color(int(red), int(blue), int(green)))
+            time.sleep(.5)
+	    
             strip.show()
-
     else:
         strip = Adafruit_NeoPixel(
             LED_COUNT, LED_PIN, LED_FREQU_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
