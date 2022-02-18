@@ -27,3 +27,5 @@ Enter passphrase for key '/home/pi/.ssh/id_rsa':
 Hi damondan/raspberry_pi_code! You've successfully authenticated, but GitHub does not provide shell access.
 
 pi@raspberrypi:~/Documents/repos/raspberry_pi_code $ git remote set-url origin git@github.com:damondan/raspberry_pi_code.git
+
+I my Github entry I have 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 I assume this is an access key to github
