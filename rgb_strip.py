@@ -37,5 +37,5 @@ while (True):
 
         strip.show()
         quit()
-    # strip.setPixelColor(2, Color(0,255,0))
-    # strip.show()
+
+
