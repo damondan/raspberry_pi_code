@@ -29,38 +29,9 @@ pause_time = 0.1
 
 try:  
     while True:  
-        if bool(buzzerFlag):
-            GPIO.output(buzzer,GPIO.HIGH)
-            print ("Beep")
-            sleep(1)
-            GPIO.output(buzzer,GPIO.LOW)
-            print ("No Beep")
-            sleep(0.1)
-            GPIO.output(buzzer,GPIO.HIGH)
-            print ("Beep")
-            sleep(0.1)
-            GPIO.output(buzzer,GPIO.LOW)
-            print ("No Beep")
-            sleep(0.1)
-            GPIO.output(buzzer,GPIO.HIGH)
-            print ("Beep")
-            sleep(0.1)
-            GPIO.output(buzzer,GPIO.LOW)
-            print ("No Beep")
-            sleep(0.1)
-            GPIO.output(buzzer,GPIO.HIGH)
-            print ("Beep")
-            sleep(0.1)
-            GPIO.output(buzzer,GPIO.LOW)
-            print ("No Beep")
-            sleep(0.1)
-            buzzerFlag = ""
-            GPIO.output(redM,True)
-
         for i in range(0,101):      #101
             ledRed.ChangeDutyCycle(i)  
             time.sleep(pause_time)
-            print("in ledRed cycling up")
         for i in range(100,-1,-1):  #100      
             ledRed.ChangeDutyCycle(i)  
             time.sleep(pause_time)
